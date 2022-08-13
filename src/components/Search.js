@@ -11,12 +11,8 @@ function Search(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const params = new URLSearchParams({
-                api_key: 'DEMO_KEY',
-                query: query,
-                pageSize: 5
-            });
-            const res = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?${params}`);
+            const params = new URLSearchParams({query});
+            const res = await fetch(`http://localhost:8000/search/${params}`);
             const data = await res.json();
             setResults(data.foods);
         };

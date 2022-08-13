@@ -6,6 +6,8 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(cors());
+
 app.get('/search/:food', (req, res) => {
     const options = {
         method: 'GET',
