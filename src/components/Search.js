@@ -17,7 +17,11 @@ function Search(props) {
             setResults(data.foods);
         };
 
-        if(query) fetchData();
+        let fetchTimeout;
+
+        if(query) fetchTimeout = setTimeout(fetchData, 1000);
+
+        return () => clearTimeout(fetchTimeout);
     }, [query]);
 
     const resultList = results.map(result => (
