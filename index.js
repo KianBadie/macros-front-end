@@ -15,6 +15,7 @@ app.get('/search/:food', (req, res) => {
         params: {
             api_key: process.env.FOOD_DATA_API_KEY,
             query: req.params.food,
+            dataType: 'Branded',
             pageSize: 5
         }
     };
