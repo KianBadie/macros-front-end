@@ -1,7 +1,9 @@
 function Result(props) {
     return (
         <li>
-            <span>{props.description}, {props.brandName}</span>
+            <h3>{props.description}</h3>
+            <p>{props.brandName}</p>
+            <p>{props.energy}KCAL/{props.servingSize}{props.servingSizeUnit}</p>
         </li>
     );
 }
