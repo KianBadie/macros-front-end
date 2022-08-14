@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Result from './Result';
 
 function Search(props) {
 
@@ -25,9 +26,12 @@ function Search(props) {
     }, [query]);
 
     const resultList = results.map(result => (
-        <li key={result.fdcId}>
-            <span>{result.brandName} {result.description}: {result.foodCategory}</span>
-        </li>
+        <Result
+            key={result.fdcId}
+            fdcId={result.fdcId}
+            description={result.description}
+            brandName={result.brandName}
+        />
     ));
 
     return (
