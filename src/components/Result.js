@@ -1,11 +1,17 @@
 function Result(props) {
+
+    const food = props.food;
+    const energyNutrient = food.foodNutrients.find(el => el.nutrientId === 1008);
+
     return (
         <li>
-            <h3>{props.description}</h3>
-            <p>{props.brandName}</p>
-            <p>{props.energy}KCAL/{props.servingSize}{props.servingSizeUnit}</p>
+            <h3>{food.description}</h3>
+            <p>{food.brandName}</p>
+            <p>{energyNutrient.value}{energyNutrient.unitName} / {food.servingSize}{food.servingSizeUnit}</p>
+            <button onClick={() => props.addFood(food)}>Add</button>
         </li>
     );
+    
 }
 
 export default Result;

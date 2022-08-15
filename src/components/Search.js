@@ -10,6 +10,12 @@ function Search(props) {
         setQuery(e.target.value);
     }
 
+    function addFood(newFood) {
+        setQuery('');
+        setResults([]);
+        props.addFood(newFood);
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             const params = new URLSearchParams({query});
@@ -25,22 +31,13 @@ function Search(props) {
         return () => clearTimeout(fetchTimeout);
     }, [query]);
 
-    const resultList = results.map(result => {
-        const energyNutrient = result.foodNutrients.find(el => el.nutrientId === 1008);
-        const energy = energyNutrient.value;
-
-        return (
-                <Result
-                key={result.fdcId}
-                fdcId={result.fdcId}
-                description={result.description}
-                brandName={result.brandName}
-                servingSize={result.servingSize}
-                servingSizeUnit={result.servingSizeUnit}
-                energy={energy}
-            />
-        );
-    });
+    const resultList = results.map(result => (
+        <Result
+            key={result.fdcId}
+            food={result}
+            addFood={addFood}
+        />
+    ));
 
     return (
         <div>
