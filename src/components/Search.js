@@ -44,9 +44,11 @@ function Search(props) {
 
     return (
         <div>
-            <label htmlFor='food-search-input'>
-                Search
-            </label>
+            <h2>
+                <label htmlFor='food-search-input'>
+                    Search Ingredients
+                </label>
+            </h2>
             <input 
                 id='food-search-input' 
                 type='search'
