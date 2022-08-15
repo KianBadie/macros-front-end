@@ -26,7 +26,7 @@ function Search(props) {
     }, [query]);
 
     const resultList = results.map(result => {
-        const energyNutrient = result.foodNutrients.find(el => el.nutrientId == 1008);
+        const energyNutrient = result.foodNutrients.find(el => el.nutrientId === 1008);
         const energy = energyNutrient.value;
 
         return (
