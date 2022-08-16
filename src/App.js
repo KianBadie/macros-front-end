@@ -4,17 +4,35 @@ import FoodList from './components/FoodList';
 
 function App() {
   
-  const [foodList, setFoodList] = useState([]);
+  const [ingredientList, setIngredientList] = useState([]);
 
-  function addFood(newFood) {
-    setFoodList([...foodList, newFood]);
+  function addIngredient(newFood) {
+    const ingredient = {
+      fdcId: newFood.fdcId,
+      food: newFood,
+      amount: newFood.servingSize,
+      unit: newFood.servingSizeUnit
+    };
+
+    setIngredientList([...ingredientList, ingredient]);
+  }
+
+  function modifyIngredient(id, newAmount) {
+    const modifiedIngredientList = ingredientList.map(ingredient => {
+      if(ingredient.id === id) {
+        return {...ingredient, amount: newAmount }
+      }
+      return ingredient;
+    });
+
+    setIngredientList(modifiedIngredientList);
   }
 
   return (
     <div>
       <h1>Recipe Breakdown</h1>
-      <Search addFood={addFood}/>
-      <FoodList foodList={foodList}/>
+      <Search addIngredient={addIngredient}/>
+      <FoodList ingredientList={ingredientList} modifyIngredient={modifyIngredient}/>
     </div>
   );
 

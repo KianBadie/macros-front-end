@@ -10,10 +10,10 @@ function Search(props) {
         setQuery(e.target.value);
     }
 
-    function addFood(newFood) {
+    function addIngredient(newFood) {
         setQuery('');
         setResults([]);
-        props.addFood(newFood);
+        props.addIngredient(newFood);
     }
 
     useEffect(() => {
@@ -35,7 +35,7 @@ function Search(props) {
         <Result
             key={result.fdcId}
             food={result}
-            addFood={addFood}
+            addIngredient={addIngredient}
         />
     ));
 
