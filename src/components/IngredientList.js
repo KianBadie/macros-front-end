@@ -1,6 +1,6 @@
 import IngredientItem from './IngredientItem';
 
-function FoodList(props) {
+function IngredientList(props) {
 
     const ingredientList = props.ingredientList.map(ingredient => (
         <IngredientItem
@@ -20,4 +20,4 @@ function FoodList(props) {
     );
 }
 
-export default FoodList;
+export default IngredientList;

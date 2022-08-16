@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Search from './components/Search';
-import FoodList from './components/FoodList';
+import IngredientList from './components/IngredientList';
 
 function App() {
   
@@ -32,7 +32,7 @@ function App() {
     <div>
       <h1>Recipe Breakdown</h1>
       <Search addIngredient={addIngredient}/>
-      <FoodList ingredientList={ingredientList} modifyIngredient={modifyIngredient}/>
+      <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient}/>
     </div>
   );
 
