@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <h1>Recipe Breakdown</h1>
+      <h1>Snackalytics</h1>
       <Search addIngredient={addIngredient}/>
       <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
       <Analytics ingredientList={ingredientList}/>
