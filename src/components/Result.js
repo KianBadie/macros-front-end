@@ -7,7 +7,7 @@ function Result(props) {
         <li>
             <h3>{food.description}</h3>
             <p>{food.brandName}</p>
-            <p>{energyNutrient.value}{energyNutrient.unitName} / {food.servingSize}{food.servingSizeUnit}</p>
+            <p>{energyNutrient.value}{energyNutrient.unitName} / 100{food.servingSizeUnit}</p>
             <button onClick={() => props.addIngredient(food)}>Add</button>
         </li>
     );
