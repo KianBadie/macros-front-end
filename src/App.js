@@ -29,11 +29,16 @@ function App() {
     setIngredientList(modifiedIngredientList);
   }
 
+  function deleteIngredient(id) {
+    const remainingIngredients = ingredientList.filter((ingredient) => ingredient.id !== id);
+    setIngredientList(remainingIngredients);
+  }
+
   return (
     <div>
       <h1>Recipe Breakdown</h1>
       <Search addIngredient={addIngredient}/>
-      <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient}/>
+      <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
       <Analytics ingredientList={ingredientList}/>
     </div>
   );

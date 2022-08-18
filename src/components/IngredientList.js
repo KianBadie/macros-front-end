@@ -7,6 +7,7 @@ function IngredientList(props) {
             key={ingredient.id}
             ingredient={ingredient}
             modifyIngredient={props.modifyIngredient}
+            deleteIngredient={props.deleteIngredient}
         />
     ));
 

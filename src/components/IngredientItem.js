@@ -26,6 +26,9 @@ function IngredientItem(props) {
                 onChange={onChange}
             />
             <span>{ingredient.unit}</span>
+            <button onClick={() => props.deleteIngredient(ingredient.id)}>
+                Delete
+            </button>
         </li>
     );
     
