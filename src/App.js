@@ -9,7 +9,7 @@ function App() {
 
   function addIngredient(newFood) {
     const ingredient = {
-      fdcId: newFood.fdcId,
+      id: newFood.fdcId,
       food: newFood,
       amount: newFood.servingSize,
       unit: newFood.servingSizeUnit

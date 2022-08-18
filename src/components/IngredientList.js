@@ -4,7 +4,7 @@ function IngredientList(props) {
 
     const ingredientList = props.ingredientList.map(ingredient => (
         <IngredientItem
-            key={ingredient.fdcId}
+            key={ingredient.id}
             ingredient={ingredient}
             modifyIngredient={props.modifyIngredient}
         />
