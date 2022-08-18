@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Search from './components/Search';
 import IngredientList from './components/IngredientList';
+import Analytics from './components/Analytics';
 
 function App() {
   
@@ -33,6 +34,7 @@ function App() {
       <h1>Recipe Breakdown</h1>
       <Search addIngredient={addIngredient}/>
       <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient}/>
+      <Analytics ingredientList={ingredientList}/>
     </div>
   );
 
