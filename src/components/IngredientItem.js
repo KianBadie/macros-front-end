@@ -2,17 +2,18 @@ import { useState } from 'react';
 
 function IngredientItem(props) {
 
-    const [amount, setAmount] = useState(props.ingredient.amount);
-
-    function onChange(e) {
-        const id = props.ingredient.id;
-        const amount = parseInt(e.target.value);
-        setAmount(amount);
-        props.modifyIngredient(id, amount);
-    }
-
     const ingredient = props.ingredient;
     const food = ingredient.food;
+
+    const [amountInputValue, setAmountInputValue] = useState(ingredient.amount);
+
+    function onChange(e) {
+        const id = ingredient.id;
+        const value = e.target.value;
+        const amount = parseInt(value) || 0;
+        setAmountInputValue(value);
+        props.modifyIngredient(id, amount);
+    }
 
     return (
         <li>
@@ -21,7 +22,7 @@ function IngredientItem(props) {
             <input
                 id='ingredient-amount-input' 
                 type='number' 
-                value={amount}
+                value={amountInputValue}
                 onChange={onChange}
             />
             <p>{ingredient.unit}</p>
