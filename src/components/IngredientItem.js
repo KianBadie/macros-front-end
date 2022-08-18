@@ -25,7 +25,7 @@ function IngredientItem(props) {
                 value={amountInputValue}
                 onChange={onChange}
             />
-            <p>{ingredient.unit}</p>
+            <span>{ingredient.unit}</span>
         </li>
     );
     
