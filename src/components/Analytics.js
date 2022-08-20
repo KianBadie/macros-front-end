@@ -1,3 +1,5 @@
+import { VictoryPie } from 'victory';
+
 function Analytics(props) {
 
     const ingredientList = props.ingredientList;
@@ -17,6 +19,12 @@ function Analytics(props) {
     const totalCarbs = getTotalNutrientValue(1005);
     const totalFat = getTotalNutrientValue(1004);
 
+    const chartData = [
+        { nutrient: 'Protein', grams: totalProtein },
+        { nutrient: 'Carbs', grams: totalCarbs },
+        { nutrient: 'Fat', grams: totalFat },
+    ];
+
     return (
         <div>
             <h2>Analytics</h2>
@@ -24,6 +32,11 @@ function Analytics(props) {
             <p>{totalProtein}g protein</p>
             <p>{totalCarbs}g carbs</p>
             <p>{totalFat}g fat</p>
+            <VictoryPie
+                data={chartData}
+                x='nutrient' 
+                y='grams'
+            />
         </div>
     );
 }
