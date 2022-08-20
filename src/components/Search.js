@@ -18,8 +18,7 @@ function Search(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const params = new URLSearchParams({query});
-            const res = await fetch(`http://localhost:8000/search/${params}`);
+            const res = await fetch(`http://localhost:8000/search/${query}`);
             const data = await res.json();
             setResults(data.foods);
         };
