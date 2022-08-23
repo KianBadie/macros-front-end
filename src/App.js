@@ -3,6 +3,8 @@ import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
 
+import './App.css'
+
 function App() {
   
   const [ingredientList, setIngredientList] = useState([]);
@@ -35,7 +37,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='app'>
       <h1>Snackalytics</h1>
       <Search addIngredient={addIngredient}/>
       <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
