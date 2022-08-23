@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from './components/Header'
 import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
@@ -38,7 +39,7 @@ function App() {
 
   return (
     <div className='app'>
-      <h1>Snackalytics</h1>
+      <Header/>
       <Search addIngredient={addIngredient}/>
       <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
       <Analytics ingredientList={ingredientList}/>
