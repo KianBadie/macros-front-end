@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Result from './Result';
 
+import './Search.css'
+
 function Search(props) {
 
     const [query, setQuery] = useState('');
@@ -39,21 +41,28 @@ function Search(props) {
     ));
 
     return (
-        <div>
-            <h2>
+        <div className='search'>
+            <h2 className='search__title'>
                 <label htmlFor='food-search-input'>
-                    Search Ingredients
+                    Search
                 </label>
             </h2>
-            <input 
-                id='food-search-input' 
-                type='search'
-                value={query}
-                onChange={handleChange}
-            />
-            <ul>
-                {resultList}
-            </ul>
+            <div className='search__search-container'>
+                <input 
+                    id='food-search-input' 
+                    type='search'
+                    value={query}
+                    onChange={handleChange}
+                    className='search__bar'
+                    placeholder='Jasmine Rice...'
+                />
+                {resultList.length > 0 &&
+                    <div className='search__separator'></div>
+                }
+                <ul className='search__result-list'>
+                    {resultList}
+                </ul>
+            </div>
         </div>
     );
 
