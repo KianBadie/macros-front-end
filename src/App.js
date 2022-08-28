@@ -41,8 +41,12 @@ function App() {
     <div className='app'>
       <Header/>
       <Search addIngredient={addIngredient}/>
-      <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
-      <Analytics ingredientList={ingredientList}/>
+      {ingredientList.length > 0 &&
+        <>
+          <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
+          <Analytics ingredientList={ingredientList}/>
+        </>
+      }
     </div>
   );
 
