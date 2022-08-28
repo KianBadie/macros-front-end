@@ -1,4 +1,4 @@
-import './Result.css';
+import styles from './Result.module.css';
 
 function Result(props) {
 
@@ -6,13 +6,13 @@ function Result(props) {
     const energyNutrient = food.foodNutrients.find(el => el.nutrientId === 1008);
 
     return (
-        <li className='search__result result'>
-            <div className='result__title-container'>
-                <h3 className='result__title'>{food.description}</h3>
-                <p className='result__brand'>{food.brandName}</p>
+        <li className={styles.result}>
+            <div>
+                <h3 className={styles.title}>{food.description}</h3>
+                <p className={styles.brand}>{food.brandName}</p>
             </div>
-            <p className='result__calories'>{energyNutrient.value}{energyNutrient.unitName} / 100{food.servingSizeUnit}</p>
-            <button className='result__btn' onClick={() => props.addIngredient(food)}>Add</button>
+            <p className={styles.calories}>{energyNutrient.value}{energyNutrient.unitName} / 100{food.servingSizeUnit}</p>
+            <button className={styles['add-btn']} onClick={() => props.addIngredient(food)}>Add</button>
         </li>
     );
     
