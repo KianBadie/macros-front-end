@@ -1,9 +1,9 @@
-import './Header.css'
+import styles from './Header.module.css'
 
 function Header(props) {
     return (
-        <header className='header'>
-            <h1 className='header__title'>Snackalytics</h1>
+        <header>
+            <h1 className={styles.title}>Snackalytics</h1>
         </header>
     );
     
