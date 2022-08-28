@@ -1,11 +1,17 @@
 .header {
-    margin-bottom: 48px;
+    margin: 48px 0;
 }
 
 .title {
     margin: 0;
-    font-size: 5.5em;
+    font-size: 3em;
     font-weight: 100;
     text-align: center;
     color: #00ad09
+}
+
+@media (min-width:576px) {
+    .title {
+        font-size: 5.5em;
+    }
 }
