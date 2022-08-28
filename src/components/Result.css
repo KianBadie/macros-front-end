@@ -1,0 +1,29 @@
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result__title {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.result__brand {
+    margin: 0;
+    font-size: 0.875em;
+    color: #525252;
+}
+
+.result__calories {
+    margin: 0;
+}
+
+.result__btn {
+    border: none;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: #00ad09;
+}
