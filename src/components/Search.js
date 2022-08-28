@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Result from './Result';
 
-import './Search.css'
+import styles from './Search.module.css'
 
 function Search(props) {
 
@@ -41,25 +41,25 @@ function Search(props) {
     ));
 
     return (
-        <div className='search'>
-            <h2 className='search__title'>
+        <div className={styles.search}>
+            <h2 className={styles.title}>
                 <label htmlFor='food-search-input'>
                     Search
                 </label>
             </h2>
-            <div className='search__search-container'>
+            <div className={styles['search-container']}>
                 <input 
                     id='food-search-input' 
                     type='search'
                     value={query}
                     onChange={handleChange}
-                    className='search__bar'
+                    className={styles.bar}
                     placeholder='Jasmine Rice...'
                 />
                 {resultList.length > 0 &&
-                    <div className='search__separator'></div>
+                    <div className={styles.separator}></div>
                 }
-                <ul className='search__result-list'>
+                <ul className={styles['result-list']}>
                     {resultList}
                 </ul>
             </div>

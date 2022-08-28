@@ -2,19 +2,19 @@
     font-weight: 300;
 }
 
-.search__title {
+.title {
     margin: 0 0 8px 0;
     font-size: 2em;
     font-weight: inherit;
 }
 
-.search__search-container {
+.search-container {
     border-radius: 16px;
     padding: 8px 16px;
     box-shadow: 0px 0px 5px -2px #000;
 }
 
-.search__bar {
+.bar {
     border: none;
     width: 100%;
     font-size: 1em;
@@ -23,22 +23,18 @@
     outline: none;
 }
 
-.search__bar::-webkit-search-cancel-button {
+.bar::-webkit-search-cancel-button {
     display: none;
 }
 
-.search__separator {
+.separator {
     margin: 12px 0;
     height: 1px;
     background: #b3b3b3;
 }
 
-.search__result-list {
+.result-list {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-.search__result {
-    margin: 16px 0;
 }
