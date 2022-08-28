@@ -4,7 +4,7 @@ import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
 
-import './App.css'
+import styles from './App.module.css'
 
 function App() {
   
@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <div className='app'>
+    <div className={styles.app}>
       <Header/>
       <Search addIngredient={addIngredient}/>
       {ingredientList.length > 0 &&
