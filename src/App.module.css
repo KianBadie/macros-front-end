@@ -1,5 +1,6 @@
 .app {
     margin: auto;
     max-width: 42rem;
+    padding: 0 16px;
     font-family: 'Roboto', sans-serif;
 }
