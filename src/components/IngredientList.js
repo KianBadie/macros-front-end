@@ -16,7 +16,7 @@ function IngredientList(props) {
     return (
         <div className={styles['ingredient-list']}>
             <h2 className={styles.title}>Ingredient List</h2>
-            <ul>
+            <ul className={styles.list}>
                 {ingredientList}
             </ul>
         </div>
