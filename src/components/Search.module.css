@@ -3,18 +3,6 @@
     font-weight: 300;
 }
 
-.title {
-    margin: 0 0 8px 0;
-    font-size: 1.5em;
-    font-weight: inherit;
-}
-
-@media (min-width:576px) {
-    .title {
-        font-size: 2em;
-    }
-}
-
 .search-container {
     border-radius: 16px;
     padding: 8px 16px;
