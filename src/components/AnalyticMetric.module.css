@@ -1,0 +1,17 @@
+.analytic-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+}
+
+.title {
+    margin: 0 0 4px 0;
+    font-size: 1.5em;
+    font-weight: inherit;
+}
+
+.value {
+    margin: 0;
+    font-size: 1.25em;
+}

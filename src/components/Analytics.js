@@ -1,18 +1,23 @@
 import SectionTitle from './SectionTitle';
+import AnalyticMetric from './AnalyticMetric';
 import { VictoryPie } from 'victory';
+
+import styles from './Analytics.module.css';
 
 function Analytics(props) {
 
     const ingredientList = props.ingredientList;
 
     function getTotalNutrientValue(nutrientId) {
-        return ingredientList.reduce((total, ingredient) => {
+        const totalNutrientValue = ingredientList.reduce((total, ingredient) => {
             const food = ingredient.food;
             const amount = ingredient.amount;
             const nutrient = food.foodNutrients.find(el => el.nutrientId === nutrientId);
             const value = (nutrient.value / 100) * amount;
             return total + value;
         }, 0);
+        
+        return Math.round(totalNutrientValue * 100) / 100;
     }
 
     const totalCalories = getTotalNutrientValue(1008);
@@ -29,10 +34,11 @@ function Analytics(props) {
     return (
         <div>
             <SectionTitle title='Analytics' />
-            <p>{totalCalories} calories</p>
-            <p>{totalProtein}g protein</p>
-            <p>{totalCarbs}g carbs</p>
-            <p>{totalFat}g fat</p>
+            <div className={styles['nums-container']}>
+                <AnalyticMetric title='Protein' value={totalProtein}/>
+                <AnalyticMetric title='Carbs' value={totalCarbs}/>
+                <AnalyticMetric title='Fat' value={totalFat}/>
+            </div>
             <VictoryPie
                 data={chartData}
                 x='nutrient' 
