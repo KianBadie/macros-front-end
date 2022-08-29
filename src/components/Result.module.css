@@ -24,10 +24,19 @@
 .calories {
     flex: 1;
     margin: 0;
+    font-size: 0.875em;
+    white-space: nowrap;
+}
+
+@media (min-width:576px) {
+    .calories {
+        font-size: 1em;
+    }
 }
 
 .add-btn {
     border: none;
+    padding: 0;
     background: none;
     font-size: inherit;
     font-family: inherit;
