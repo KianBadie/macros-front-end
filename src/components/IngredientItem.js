@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ReactComponent as RemoveIcon } from '../removeIcon.svg';
 
 import styles from './IngredientItem.module.css';
 
@@ -20,7 +21,7 @@ function IngredientItem(props) {
     return (
         <li className={styles['ingredient-item']}>
             <button className={styles['delete-btn']} onClick={() => props.deleteIngredient(ingredient.id)}>
-                x
+                <RemoveIcon />
             </button>
             <div className={styles['title-container']}>
                 <h3 className={styles.title}>{food.description}</h3>
