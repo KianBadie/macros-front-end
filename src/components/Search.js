@@ -20,7 +20,7 @@ function Search(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch(`http://localhost:8000/search/${query}`);
+            const res = await fetch(`http://${window.location.hostname}:8000/search/${query}`);
             const data = await res.json();
             setResults(data.foods);
         };
