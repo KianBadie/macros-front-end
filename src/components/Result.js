@@ -7,7 +7,7 @@ function Result(props) {
 
     return (
         <li className={styles.result}>
-            <div>
+            <div className={styles['title-container']}>
                 <h3 className={styles.title}>{food.description}</h3>
                 <p className={styles.brand}>{food.brandName}</p>
             </div>
