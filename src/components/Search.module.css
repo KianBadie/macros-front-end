@@ -21,15 +21,18 @@
 }
 
 .bar {
-    border: none;
+    margin: 0;
     width: 100%;
+    border: none;
+    padding: 0;
+    background: none;
     font-size: 1em;
     font-family: inherit;
     font-weight: inherit;
     outline: none;
 }
 
-.bar::-webkit-search-cancel-button {
+.bar::-webkit-search-decoration, .bar::-webkit-search-cancel-button {
     display: none;
 }
 
