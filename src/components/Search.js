@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Result from './Result';
 
-import styles from './Search.module.css'
+import styles from './Search.module.css';
 
 function Search(props) {
 

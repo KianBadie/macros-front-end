@@ -4,7 +4,7 @@ import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
 
-import styles from './App.module.css'
+import styles from './App.module.css';
 
 function App() {
   

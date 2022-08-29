@@ -1,4 +1,5 @@
 import { ReactComponent as AddIcon } from '../addIcon.svg';
+
 import styles from './Result.module.css';
 
 function Result(props) {
