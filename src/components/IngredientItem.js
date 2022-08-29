@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import styles from './IngredientItem.module.css';
+
 function IngredientItem(props) {
 
     const ingredient = props.ingredient;
@@ -16,19 +18,24 @@ function IngredientItem(props) {
     }
 
     return (
-        <li>
-            <h3>{food.description}</h3>
-            <p>{food.brandName}</p>
-            <input
-                id='ingredient-amount-input' 
-                type='number' 
-                value={amountInputValue}
-                onChange={onChange}
-            />
-            <span>{ingredient.unit}</span>
-            <button onClick={() => props.deleteIngredient(ingredient.id)}>
-                Delete
+        <li className={styles['ingredient-item']}>
+            <button className={styles['delete-btn']} onClick={() => props.deleteIngredient(ingredient.id)}>
+                x
             </button>
+            <div className={styles['title-container']}>
+                <h3 className={styles.title}>{food.description}</h3>
+                <p className={styles.brand}>{food.brandName}</p>
+            </div>
+            <span>
+                <input
+                    id='ingredient-amount-input' 
+                    type='number' 
+                    value={amountInputValue}
+                    onChange={onChange}
+                    className={styles['ingredient-input']}
+                />
+                {ingredient.unit}
+            </span>
         </li>
     );
     
