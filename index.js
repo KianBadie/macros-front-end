@@ -23,7 +23,7 @@ app.get('/search/:food', (req, res) => {
     axios.request(options).then((apiRes) => {
         res.json(apiRes.data);
     }).catch((err) => {
-        console.log(error);
+        console.log(err);
     });
 });
 
