@@ -1,3 +1,4 @@
+import SectionTitle from './SectionTitle';
 import IngredientItem from './IngredientItem';
 
 import styles from './IngredientList.module.css';
@@ -15,7 +16,7 @@ function IngredientList(props) {
 
     return (
         <div className={styles['ingredient-list']}>
-            <h2 className={styles.title}>Ingredient List</h2>
+            <SectionTitle title='Ingredient List' />
             <ul className={styles.list}>
                 {ingredientList}
             </ul>

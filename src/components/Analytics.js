@@ -1,3 +1,4 @@
+import SectionTitle from './SectionTitle';
 import { VictoryPie } from 'victory';
 
 function Analytics(props) {
@@ -27,7 +28,7 @@ function Analytics(props) {
 
     return (
         <div>
-            <h2>Analytics</h2>
+            <SectionTitle title='Analytics' />
             <p>{totalCalories} calories</p>
             <p>{totalProtein}g protein</p>
             <p>{totalCarbs}g carbs</p>

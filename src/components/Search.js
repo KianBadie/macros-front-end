@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import SectionTitle from './SectionTitle';
 import Result from './Result';
 
 import styles from './Search.module.css';
@@ -42,14 +43,9 @@ function Search(props) {
 
     return (
         <div className={styles.search}>
-            <h2 className={styles.title}>
-                <label htmlFor='food-search-input'>
-                    Search
-                </label>
-            </h2>
+            <SectionTitle title='Search' />
             <div className={styles['search-container']}>
                 <input 
-                    id='food-search-input' 
                     type='search'
                     value={query}
                     onChange={handleChange}
