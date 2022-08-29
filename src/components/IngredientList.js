@@ -1,5 +1,7 @@
 import IngredientItem from './IngredientItem';
 
+import styles from './IngredientList.module.css';
+
 function IngredientList(props) {
 
     const ingredientList = props.ingredientList.map(ingredient => (
@@ -12,8 +14,8 @@ function IngredientList(props) {
     ));
 
     return (
-        <div>
-            <h2>Ingredient List</h2>
+        <div className={styles['ingredient-list']}>
+            <h2 className={styles.title}>Ingredient List</h2>
             <ul>
                 {ingredientList}
             </ul>
