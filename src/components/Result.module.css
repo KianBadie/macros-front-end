@@ -35,10 +35,12 @@
 }
 
 .add-btn {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
     border: none;
-    padding: 0;
+    padding: 6px;
     background: none;
     font-size: inherit;
-    font-family: inherit;
-    color: #00ad09;
+    fill: #00ad09;
 }

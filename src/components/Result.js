@@ -1,3 +1,4 @@
+import { ReactComponent as AddIcon } from '../addIcon.svg';
 import styles from './Result.module.css';
 
 function Result(props) {
@@ -12,7 +13,9 @@ function Result(props) {
                 <p className={styles.brand}>{food.brandName}</p>
             </div>
             <p className={styles.calories}>{energyNutrient.value}{energyNutrient.unitName} / 100{food.servingSizeUnit}</p>
-            <button className={styles['add-btn']} onClick={() => props.addIngredient(food)}>Add</button>
+            <button className={styles['add-btn']} onClick={() => props.addIngredient(food)}>
+                <AddIcon />
+            </button>
         </li>
     );
     
