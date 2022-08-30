@@ -1,4 +1,5 @@
 .analytic-metric {
+    min-width: 4.75em;
     display: flex;
     flex-direction: column;
     align-items: center;
