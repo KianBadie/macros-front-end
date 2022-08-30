@@ -5,7 +5,9 @@ import styles from './Result.module.css';
 function Result(props) {
 
     const food = props.food;
+    const servingSize = food.servingSize;
     const energyNutrient = food.foodNutrients.find(el => el.nutrientId === 1008);
+    const energyPerServing = Math.round( (energyNutrient.value / 100) * servingSize );
 
     return (
         <li className={styles.result}>
@@ -13,7 +15,7 @@ function Result(props) {
                 <h3 className={styles.title}>{food.description}</h3>
                 <p className={styles.brand}>{food.brandName}</p>
             </div>
-            <p className={styles.calories}>{energyNutrient.value}{energyNutrient.unitName} / 100{food.servingSizeUnit}</p>
+            <p className={styles.calories}>{energyPerServing} cal / {servingSize} {food.servingSizeUnit}</p>
             <button className={styles['add-btn']} onClick={() => props.addIngredient(food)}>
                 <AddIcon />
             </button>
