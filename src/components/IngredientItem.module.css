@@ -23,3 +23,8 @@
     font-family: inherit;
     font-weight: inherit;
 }
+
+.unit {
+    width: 1.1875em;
+    display: inline-block;
+}

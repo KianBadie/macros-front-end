@@ -32,7 +32,7 @@ function IngredientItem(props) {
                     onChange={onChange}
                     className={styles['ingredient-input']}
                 />
-                {ingredient.unit}
+                <span className={styles.unit}>{ingredient.unit}</span>
             </span>
         </li>
     );
