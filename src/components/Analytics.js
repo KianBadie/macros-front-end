@@ -42,7 +42,16 @@ function Analytics(props) {
             <VictoryPie
                 data={chartData}
                 x='nutrient' 
-                y='grams'
+                y='grams' 
+                padding={64}
+                colorScale={['#9cff97', '#897eff', '#ff6f6f']} 
+                innerRadius={48}
+                padAngle={2}
+                animate={{ duration: 500 }}
+                style={{
+                    labels: { fontFamily: 'Roboto', fontWeight: 300 }, 
+                    data: { filter: 'drop-shadow( 0px 0px 2px rgba(0, 0, 0, 0.5))' }
+                }}
             />
         </div>
     );
