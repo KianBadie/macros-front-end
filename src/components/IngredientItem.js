@@ -7,6 +7,7 @@ function IngredientItem(props) {
 
     const ingredient = props.ingredient;
     const food = ingredient.food;
+    const brand = food.brandName || food.brandOwner;
 
     const [amountInputValue, setAmountInputValue] = useState(ingredient.amount);
 
@@ -25,7 +26,7 @@ function IngredientItem(props) {
             </button>
             <div className={styles['title-container']}>
                 <h3 className={styles.title}>{food.description}</h3>
-                <p className={styles.brand}>{food.brandName}</p>
+                <p className={styles.brand}>{brand}</p>
             </div>
             <span>
                 <input
