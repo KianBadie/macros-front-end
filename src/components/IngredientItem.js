@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FoodTitle from './FoodTitle';
 import { ReactComponent as RemoveIcon } from '../removeIcon.svg';
 
 import styles from './IngredientItem.module.css';
@@ -6,8 +7,6 @@ import styles from './IngredientItem.module.css';
 function IngredientItem(props) {
 
     const ingredient = props.ingredient;
-    const food = ingredient.food;
-    const brand = food.brandName || food.brandOwner;
 
     const [amountInputValue, setAmountInputValue] = useState(ingredient.amount);
 
@@ -24,10 +23,7 @@ function IngredientItem(props) {
             <button className={styles['delete-btn']} onClick={() => props.deleteIngredient(ingredient.id)}>
                 <RemoveIcon />
             </button>
-            <div className={styles['title-container']}>
-                <h3 className={styles.title}>{food.description}</h3>
-                <p className={styles.brand}>{brand}</p>
-            </div>
+            <FoodTitle food={ingredient.food}/>
             <span>
                 <input
                     id='ingredient-amount-input' 

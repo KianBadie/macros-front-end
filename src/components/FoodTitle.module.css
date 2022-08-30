@@ -1,0 +1,15 @@
+.food-title {
+    flex: 1;
+}
+
+.title {
+    margin: 0 0 4px 0;
+    font-size: 1em;
+    font-weight: inherit;
+}
+
+.brand {
+    margin: 0;
+    font-size: 0.875em;
+    color: #525252;
+}
