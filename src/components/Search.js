@@ -23,7 +23,8 @@ function Search(props) {
         const fetchData = async () => {
             const res = await fetch(`http://${window.location.hostname}:8000/search/${query}`);
             const data = await res.json();
-            setResults(data.foods);
+            const results = data.foods.filter( (food) => food.foodNutrients.some((nutrient) => nutrient.nutrientId == 1008) );
+            setResults(results);
         };
 
         let fetchTimeout;
