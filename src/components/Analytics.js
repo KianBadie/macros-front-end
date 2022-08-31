@@ -22,13 +22,16 @@ function Analytics(props) {
 
     const totalCalories = getTotalNutrientValue(1008);
     const totalProtein = getTotalNutrientValue(1003);
+    const calProtein = totalProtein * 4;
     const totalCarbs = getTotalNutrientValue(1005);
+    const calCarbs = totalCarbs * 4;
     const totalFat = getTotalNutrientValue(1004);
+    const calFat = totalFat * 9;
 
     const chartData = [
-        { nutrient: 'Protein', grams: totalProtein },
-        { nutrient: 'Carbs', grams: totalCarbs },
-        { nutrient: 'Fat', grams: totalFat },
+        { nutrient: 'Protein', calories: calProtein },
+        { nutrient: 'Carbs', calories: calCarbs },
+        { nutrient: 'Fat', calories: calFat },
     ];
 
     return (
@@ -42,7 +45,7 @@ function Analytics(props) {
             <VictoryPie
                 data={chartData}
                 x='nutrient' 
-                y='grams' 
+                y='calories' 
                 padding={64}
                 colorScale={['#9cff97', '#897eff', '#ff6f6f']} 
                 innerRadius={48}
