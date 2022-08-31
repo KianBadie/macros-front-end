@@ -1,6 +1,6 @@
 import SectionTitle from './SectionTitle';
 import AnalyticMetric from './AnalyticMetric';
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryLabel } from 'victory';
 
 import styles from './Analytics.module.css';
 
@@ -20,13 +20,14 @@ function Analytics(props) {
         return Math.round(totalNutrientValue * 100) / 100;
     }
 
-    const totalCalories = getTotalNutrientValue(1008);
+    const listedCalories = getTotalNutrientValue(1008);
     const totalProtein = getTotalNutrientValue(1003);
     const calProtein = totalProtein * 4;
     const totalCarbs = getTotalNutrientValue(1005);
     const calCarbs = totalCarbs * 4;
     const totalFat = getTotalNutrientValue(1004);
     const calFat = totalFat * 9;
+    const calculatedCalories = calProtein + calCarbs + calFat;
 
     const chartData = [
         { nutrient: 'Protein', calories: calProtein },
@@ -42,20 +43,27 @@ function Analytics(props) {
                 <AnalyticMetric title='Carbs' value={totalCarbs}/>
                 <AnalyticMetric title='Fat' value={totalFat}/>
             </div>
-            <VictoryPie
-                data={chartData}
-                x='nutrient' 
-                y='calories' 
-                padding={64}
-                colorScale={['#9cff97', '#897eff', '#ff6f6f']} 
-                innerRadius={48}
-                padAngle={2}
-                animate={{ duration: 500 }}
-                style={{
-                    labels: { fontFamily: 'Roboto', fontWeight: 300 }, 
-                    data: { filter: 'drop-shadow( 0px 0px 2px rgba(0, 0, 0, 0.5))' }
-                }}
-            />
+            <svg viewBox='0 0 400 400'>
+                <VictoryPie
+                    standalone={false}
+                    data={chartData}
+                    labels={({datum}) => [datum.nutrient, `${Math.round(datum.calories)} cal`]}
+                    x='nutrient' 
+                    y='calories' 
+                    padding={64}
+                    colorScale={['#9cff97', '#897eff', '#ff6f6f']} 
+                    innerRadius={96}
+                    padAngle={2}
+                    animate={{ duration: 500 }}
+                    style={{ labels: { fontFamily: 'Roboto', fontWeight: 300 } }}
+                />
+                <VictoryLabel
+                    textAnchor='middle'
+                    style={{ fontFamily: 'Roboto', fontWeight: 300 }}
+                    x={200} y={200}
+                    text={['Calories', `${Math.round(calculatedCalories)} cal`]}
+                />
+            </svg>
         </div>
     );
 }
