@@ -15,9 +15,15 @@
     border-bottom-right-radius: 0;
 }
 
-.bar {
+.form {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.input {
+    flex: 1;
     margin: 0;
-    width: 100%;
     border: none;
     padding: 0;
     background: none;
@@ -27,8 +33,15 @@
     outline: none;
 }
 
-.bar::-webkit-search-decoration, .bar::-webkit-search-cancel-button {
-    display: none;
+.submit {
+    margin: 0;
+    border: none;
+    padding: 0;
+    background: none;
+    color: #00ad09;
+    font-size: 1em;
+    font-family: inherit;
+    font-weight: inherit;
 }
 
 .result-list {
