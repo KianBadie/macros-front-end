@@ -45,7 +45,7 @@ function Search(props) {
     return (
         <div className={styles.search}>
             <SectionTitle title='Search' />
-            <div className={styles['search-container']}>
+            <div className={`${styles['search-container']} ${resultList.length > 0 ? styles['search-container-results'] : ''}`}>
                 <input 
                     type='search'
                     value={query}
@@ -53,9 +53,6 @@ function Search(props) {
                     className={styles.bar}
                     placeholder='Jasmine Rice...'
                 />
-                {resultList.length > 0 &&
-                    <div className={styles.separator}></div>
-                }
                 <ul className={styles['result-list']}>
                     {resultList}
                 </ul>
