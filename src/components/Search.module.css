@@ -44,7 +44,7 @@
     font-weight: inherit;
 }
 
-.result-list {
+.results-container {
     position: absolute;
     top: 100%;
     left: 0;
@@ -54,6 +54,18 @@
     width: 100%;
     padding: 0 16px;
     background: #fff;
-    list-style: none;
     box-shadow: 0px 0px 5px -2px #000;
+}
+
+.result-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.empty-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
 }

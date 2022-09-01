@@ -8,6 +8,7 @@ function Search(props) {
 
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
+    const [resultsContainerShowing, setResultsContainerShowing] = useState(false);
 
     function handleSubmit(e) {
         const fetchData = async () => {
@@ -19,31 +20,45 @@ function Search(props) {
 
         e.preventDefault();
 
-        if(query) fetchData();
+        if(query) {
+            fetchData();
+            setResultsContainerShowing(true);
+        }
     }
 
     function handleChange(e) {
         setQuery(e.target.value);
+        setResults([]);
+        setResultsContainerShowing(false);
     }
 
     function addIngredient(newFood) {
         setQuery('');
         setResults([]);
+        setResultsContainerShowing(false);
         props.addIngredient(newFood);
     }
 
-    const resultList = results.map(result => (
-        <Result
-            key={result.fdcId}
-            food={result}
-            addIngredient={addIngredient}
-        />
-    ));
+    const resultListTemplate = (
+        <ul className={styles['result-list']}>
+            {results.map(result => (
+                <Result
+                    key={result.fdcId}
+                    food={result}
+                    addIngredient={addIngredient}
+                />
+            ))}
+        </ul>
+    );
+
+    const emptyResultsTemplate = (
+        <div className={styles['empty-results']}>No foods found.</div>
+    );
 
     return (
         <div className={styles.search}>
             <SectionTitle title='Search' />
-            <div className={`${styles['search-container']} ${resultList.length > 0 ? styles['search-container-results'] : ''}`}>
+            <div className={`${styles['search-container']} ${resultsContainerShowing && styles['search-container-results']}`}>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <input 
                         type='search'
@@ -54,9 +69,12 @@ function Search(props) {
                     />
                     <button type='submit' className={styles.submit}>Search</button>
                 </form>
-                <ul className={styles['result-list']}>
-                    {resultList}
-                </ul>
+                <div 
+                    className={styles['results-container']} 
+                    style={resultsContainerShowing ? {} : { display: 'none' }}
+                >
+                    {results.length > 0 ? resultListTemplate : emptyResultsTemplate}
+                </div>
             </div>
         </div>
     );
