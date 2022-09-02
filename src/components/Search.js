@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import SectionTitle from './SectionTitle';
 import Result from './Result';
 
