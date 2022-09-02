@@ -9,18 +9,21 @@ function Search(props) {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
     const [resultsContainerShowing, setResultsContainerShowing] = useState(false);
+    const [fetching, setFetching] = useState(false);
 
     function handleSubmit(e) {
         const fetchData = async () => {
             const res = await fetch(`http://${window.location.hostname}:8000/search/${query}`);
             const data = await res.json();
             const results = data.foods.filter( (food) => food.foodNutrients.some((nutrient) => nutrient.nutrientId == 1008) );
+            setFetching(false);
             setResults(results);
         };
 
         e.preventDefault();
 
         if(query) {
+            setFetching(true);
             fetchData();
             setResultsContainerShowing(true);
         }
@@ -55,6 +58,10 @@ function Search(props) {
         <div className={styles['empty-results']}>No foods found.</div>
     );
 
+    const resultsLoadingTemplate = (
+        <div className={styles.loader}></div>
+    );
+
     return (
         <div className={styles.search}>
             <SectionTitle title='Search' />
@@ -73,7 +80,15 @@ function Search(props) {
                     className={styles['results-container']} 
                     style={resultsContainerShowing ? {} : { display: 'none' }}
                 >
-                    {results.length > 0 ? resultListTemplate : emptyResultsTemplate}
+                    {(() => {
+                        if(fetching) {
+                            return resultsLoadingTemplate;
+                        } else if (results.length > 0) {
+                            return resultListTemplate;
+                        } else {
+                            return emptyResultsTemplate;
+                        }
+                    })()}
                 </div>
             </div>
         </div>
