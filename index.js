@@ -1,9 +1,12 @@
 const PORT = 8000;
 const express = require('express');
+const path = require('path');
 const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
+
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.get('/api/search/:food', (req, res) => {
     const options = {
@@ -22,6 +25,10 @@ app.get('/api/search/:food', (req, res) => {
     }).catch((err) => {
         console.log(err);
     });
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
