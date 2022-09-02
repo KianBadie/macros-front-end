@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors());
 
-app.get('/search/:food', (req, res) => {
+app.get('/api/search/:food', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://api.nal.usda.gov/fdc/v1/foods/search',

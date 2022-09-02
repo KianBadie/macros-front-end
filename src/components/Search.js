@@ -13,7 +13,7 @@ function Search(props) {
 
     function handleSubmit(e) {
         const fetchData = async () => {
-            const res = await fetch(`/search/${query}`);
+            const res = await fetch(`/api/search/${query}`);
             const data = await res.json();
             const results = data.foods.filter( (food) => food.foodNutrients.some((nutrient) => nutrient.nutrientId == 1008) );
             setFetching(false);
