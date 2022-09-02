@@ -1,6 +1,8 @@
 .app {
+    position: relative;
     margin: auto;
     max-width: 42rem;
-    padding: 0 16px;
+    min-height: 100vh;
+    padding: 0 16px 6.5em;
     font-family: 'Roboto', sans-serif;
 }

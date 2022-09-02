@@ -1,0 +1,17 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    margin: 0;
+    text-align: center;
+    color: #757575;
+    font-size: 1em;
+    font-weight: 300;
+}

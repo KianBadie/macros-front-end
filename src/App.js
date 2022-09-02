@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
+import Footer from './components/Footer';
 
 import styles from './App.module.css';
 
@@ -47,6 +48,7 @@ function App() {
           <Analytics ingredientList={ingredientList}/>
         </>
       }
+      <Footer/>
     </div>
   );
 
