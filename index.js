@@ -4,6 +4,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
+const APIKEY = process.env.FOOD_DATA_API_KEY;
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.get('/api/search/:food', (req, res) => {
         method: 'GET',
         url: 'https://api.nal.usda.gov/fdc/v1/foods/search',
         params: {
-            api_key: process.env.FOOD_DATA_API_KEY,
+            api_key: APIKEY,
             query: req.params.food,
             dataType: 'Branded',
             pageSize: 5
