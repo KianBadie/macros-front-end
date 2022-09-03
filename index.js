@@ -1,8 +1,9 @@
-const PORT = 8000;
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
 require('dotenv').config();
+
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 
