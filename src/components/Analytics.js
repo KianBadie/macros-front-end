@@ -20,7 +20,6 @@ function Analytics(props) {
         return Math.round(totalNutrientValue * 100) / 100;
     }
 
-    const listedCalories = getTotalNutrientValue(1008);
     const totalProtein = getTotalNutrientValue(1003);
     const calProtein = totalProtein * 4;
     const totalCarbs = getTotalNutrientValue(1005);
