@@ -60,7 +60,7 @@ function Analytics(props) {
                     textAnchor='middle'
                     style={{ fontFamily: 'Roboto', fontWeight: 300 }}
                     x={200} y={200}
-                    text={['Calories', `${Math.round(calculatedCalories)} cal`]}
+                    text={['Calculated Calories', `${Math.round(calculatedCalories)} cal`]}
                 />
             </svg>
         </div>
