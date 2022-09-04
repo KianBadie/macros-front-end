@@ -1,6 +1,6 @@
 import SectionTitle from './SectionTitle';
 import AnalyticMetric from './AnalyticMetric';
-import { VictoryPie, VictoryLabel } from 'victory';
+import AnalyticsChart from './AnalyticsChart';
 
 import styles from './Analytics.module.css';
 
@@ -33,6 +33,7 @@ function Analytics(props) {
         { nutrient: 'Carbs', calories: calCarbs },
         { nutrient: 'Fat', calories: calFat },
     ];
+    const chartLabel = ['Calculated Calories', `${Math.round(calculatedCalories)} cal`];
 
     return (
         <div>
@@ -42,27 +43,7 @@ function Analytics(props) {
                 <AnalyticMetric title='Carbs' value={totalCarbs}/>
                 <AnalyticMetric title='Fat' value={totalFat}/>
             </div>
-            <svg viewBox='0 0 400 400'>
-                <VictoryPie
-                    standalone={false}
-                    data={chartData}
-                    labels={({datum}) => [datum.nutrient, `${Math.round(datum.calories)} cal`]}
-                    x='nutrient' 
-                    y='calories' 
-                    padding={64}
-                    colorScale={['#9cff97', '#897eff', '#ff6f6f']} 
-                    innerRadius={96}
-                    padAngle={2}
-                    animate={{ duration: 500 }}
-                    style={{ labels: { fontFamily: 'Roboto', fontWeight: 300 } }}
-                />
-                <VictoryLabel
-                    textAnchor='middle'
-                    style={{ fontFamily: 'Roboto', fontWeight: 300 }}
-                    x={200} y={200}
-                    text={['Calculated Calories', `${Math.round(calculatedCalories)} cal`]}
-                />
-            </svg>
+            <AnalyticsChart data={chartData} label={chartLabel}/>
         </div>
     );
 }
