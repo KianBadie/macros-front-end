@@ -16,6 +16,9 @@
     "victory": "^36.6.4",
     "web-vitals": "^2.1.4"
   },
+  "engines": {
+    "node": "16.14.0"
+  },
   "scripts": {
     "start": "node index.js",
     "start:backend": "nodemon index.js",
