@@ -17,5 +17,7 @@ https://snackalytics.herokuapp.com/
 - Chart Library: Victory
 - Transitions: React Transition Group
 
-## Food Data
+## Sources
+FrontEnd structure takes from [MDN's React todo app](https://github.com/mdn/todo-react).
+
 Food compisition data obtained from U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.
