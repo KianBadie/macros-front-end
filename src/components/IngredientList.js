@@ -1,25 +1,39 @@
 import SectionTitle from './SectionTitle';
 import IngredientItem from './IngredientItem';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import styles from './IngredientList.module.css';
 
 function IngredientList(props) {
 
     const ingredientList = props.ingredientList.map(ingredient => (
-        <IngredientItem
+        <CSSTransition
             key={ingredient.id}
-            ingredient={ingredient}
-            modifyIngredient={props.modifyIngredient}
-            deleteIngredient={props.deleteIngredient}
-        />
+            timeout={{
+                enter: 1000,
+                exit: 750
+            }}
+            classNames={{
+                enter: styles['transition-enter'],
+                enterActive: styles['transition-enter-active'],
+                exit: styles['transition-exit'],
+                exitActive: styles['transition-exit-active']
+            }}
+        >
+            <IngredientItem
+                ingredient={ingredient}
+                modifyIngredient={props.modifyIngredient}
+                deleteIngredient={props.deleteIngredient}
+            />
+        </CSSTransition>
     ));
 
     return (
         <div className={styles['ingredient-list']}>
             <SectionTitle title='Ingredient List' />
-            <ul className={styles.list}>
+            <TransitionGroup component='ul' className={styles.list}>
                 {ingredientList}
-            </ul>
+            </TransitionGroup>
         </div>
     );
 }

@@ -8,3 +8,25 @@
     padding: 0;
     list-style: none;
 }
+
+.transition-enter {
+    transform: translateY(16px);
+    opacity: 0;
+}
+
+.transition-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 1s, opacity 1s;
+}
+
+.transition-exit {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.transition-exit-active {
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform 0.75s, opacity 0.75s;
+}
