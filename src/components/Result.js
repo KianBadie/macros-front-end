@@ -13,7 +13,7 @@ function Result(props) {
     return (
         <li className={styles.result}>
             <FoodTitle food={food} />
-            <p className={styles.calories}>{energyPerServing} cal / {servingSize} {food.servingSizeUnit}</p>
+            <p className={styles.calories}>{energyPerServing} cal / {Math.round(servingSize)} {food.servingSizeUnit}</p>
             <button className={styles['add-btn']} onClick={() => props.addIngredient(food)}>
                 <AddIcon />
             </button>
