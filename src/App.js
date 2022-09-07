@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Header from './components/Header'
 import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
 import Footer from './components/Footer';
+import { CSSTransition } from 'react-transition-group';
 
 import styles from './App.module.css';
 
 function App() {
   
   const [ingredientList, setIngredientList] = useState([]);
+
+  const tranistionContainer = useRef(null);
 
   function addIngredient(newFood) {
     const ingredient = {
@@ -42,12 +45,22 @@ function App() {
     <div className={styles.app}>
       <Header/>
       <Search addIngredient={addIngredient}/>
-      {ingredientList.length > 0 &&
-        <>
+      <CSSTransition
+        nodeRef={tranistionContainer}
+        in={ingredientList.length > 0}
+        timeout={1000}
+        exit={false}
+        unmountOnExit
+        classNames={{
+          enter: styles['transition-enter'],
+          enterActive: styles['transition-enter-active']
+        }}
+      >
+        <div ref={tranistionContainer}>
           <IngredientList ingredientList={ingredientList} modifyIngredient={modifyIngredient} deleteIngredient={deleteIngredient}/>
           <Analytics ingredientList={ingredientList}/>
-        </>
-      }
+        </div>
+      </CSSTransition>
       <Footer/>
     </div>
   );
