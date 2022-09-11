@@ -8,7 +8,7 @@ const APIKEY = process.env.FOOD_DATA_API_KEY;
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, 'build')));
+app.use(express.static(path.resolve(__dirname, '../build')));
 
 app.get('/api/search/:food', (req, res) => {
     const options = {
@@ -30,7 +30,7 @@ app.get('/api/search/:food', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../build', 'index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

@@ -21,8 +21,8 @@
     "node": "16.14.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "start:backend": "nodemon index.js",
+    "start": "node server/index.js",
+    "start:backend": "nodemon server/index.js",
     "start:frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
