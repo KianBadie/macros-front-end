@@ -1,0 +1,22 @@
+.btn {
+    margin: 0;
+    border: none;
+    padding: 0;
+    background: none;
+    font-size: 1em;
+    font-family: inherit;
+    font-weight: 300;
+    color: #757575;
+    transition: box-shadow 0.15s;
+}
+
+@media (min-width:576px) {
+    .btn {
+        font-size: 1.25em;
+    }
+}
+
+.btn[aria-pressed='true'] {
+    color: #00ad09;
+    box-shadow: 0px 4px 2px -2px #00ad0940;
+}

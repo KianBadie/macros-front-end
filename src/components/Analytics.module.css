@@ -1,4 +1,16 @@
 .nums-container {
+    margin-bottom: 32px;
     display: flex;
     justify-content: space-between;
+}
+
+.filter-container {
+    display: flex;
+    gap: 1.75em;
+}
+
+@media (min-width:576px) {
+    .filter-container {
+        gap: 3em;
+    }
 }
