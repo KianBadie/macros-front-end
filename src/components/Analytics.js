@@ -22,7 +22,7 @@ function Analytics(props) {
             const food = ingredient.food;
             const amount = ingredient.amount;
             const nutrient = food.foodNutrients.find(el => el.nutrientId === nutrientId);
-            const value = (nutrient.value / 100) * amount;
+            const value = nutrient ? (nutrient.value / 100) * amount : 0;
             return total + value;
         }, 0);
         
