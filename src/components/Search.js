@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SectionTitle from './SectionTitle/SectionTitle';
-import Result from './Result';
+import Result from './Result/Result';
 
 import styles from './Search.module.css';
 

@@ -1,5 +1,5 @@
-import FoodTitle from './FoodTitle/FoodTitle';
-import { ReactComponent as AddIcon } from '../addIcon.svg';
+import FoodTitle from '../FoodTitle/FoodTitle';
+import { ReactComponent as AddIcon } from '../../addIcon.svg';
 
 import styles from './Result.module.css';
 
