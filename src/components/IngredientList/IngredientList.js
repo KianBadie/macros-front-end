@@ -1,5 +1,5 @@
-import SectionTitle from './SectionTitle/SectionTitle';
-import IngredientItem from './IngredientItem/IngredientItem';
+import SectionTitle from '../SectionTitle/SectionTitle';
+import IngredientItem from '../IngredientItem/IngredientItem';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import styles from './IngredientList.module.css';
