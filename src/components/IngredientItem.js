@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FoodTitle from './FoodTitle';
+import FoodTitle from './FoodTitle/FoodTitle';
 import { ReactComponent as RemoveIcon } from '../removeIcon.svg';
 
 import styles from './IngredientItem.module.css';
