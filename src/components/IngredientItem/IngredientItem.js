@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FoodTitle from '../FoodTitle/FoodTitle';
-import { ReactComponent as RemoveIcon } from '../../removeIcon.svg';
+import { ReactComponent as RemoveIcon } from '../../icons/removeIcon.svg';
 
 import styles from './IngredientItem.module.css';
 
