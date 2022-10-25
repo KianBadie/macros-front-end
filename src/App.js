@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Search from './components/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import { CSSTransition } from 'react-transition-group';
 
 import styles from './App.module.css';
