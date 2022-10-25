@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import Header from './components/Header/Header'
-import Search from './components/Search';
+import Search from './components/Search/Search';
 import IngredientList from './components/IngredientList';
 import Analytics from './components/Analytics';
 import Footer from './components/Footer/Footer';
