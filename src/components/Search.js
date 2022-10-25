@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SectionTitle from './SectionTitle';
+import SectionTitle from './SectionTitle/SectionTitle';
 import Result from './Result';
 
 import styles from './Search.module.css';

@@ -1,4 +1,4 @@
-import SectionTitle from './SectionTitle';
+import SectionTitle from './SectionTitle/SectionTitle';
 import IngredientItem from './IngredientItem';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
