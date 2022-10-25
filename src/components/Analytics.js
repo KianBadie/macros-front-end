@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SectionTitle from './SectionTitle/SectionTitle';
 import AnalyticMetric from './AnalyticMetric/AnalyticMetric';
 import ChartFilter from './ChartFilter';
-import AnalyticsChart from './AnalyticsChart';
+import AnalyticsChart from './AnalyticsChart/AnalyticsChart';
 
 import styles from './Analytics.module.css';
 
