@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SectionTitle from './SectionTitle/SectionTitle';
-import AnalyticMetric from './AnalyticMetric';
+import AnalyticMetric from './AnalyticMetric/AnalyticMetric';
 import ChartFilter from './ChartFilter';
 import AnalyticsChart from './AnalyticsChart';
 
